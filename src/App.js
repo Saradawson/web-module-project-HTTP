@@ -3,6 +3,7 @@ import EditMovieForm from "./components/EditMovieForm";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MovieList from './components/MovieList';
 import Movie from './components/Movie';
+import AddMovieForm from "./components/AddMovieForm";
 
 import MovieHeader from './components/MovieHeader';
 
@@ -44,6 +45,10 @@ const App = (props) => {
               <EditMovieForm setMovies={setMovies}/>
             </Route>
 
+            <Route exact path='/movies/add'>
+              <AddMovieForm setMovies={setMovies}/>
+            </Route>
+
             <Route path="/movies/:id">
               <Movie setMovies={setMovies}/>
             </Route>
@@ -55,6 +60,7 @@ const App = (props) => {
             <Route path="/">
               <Redirect to="/movies"/>
             </Route>
+
           </Switch>
         </div>
       </div>
